@@ -24,7 +24,7 @@ jobs:
     - name: Assume IAM Role
       id: assume-role
       run: |
-        ROLE_ARN="arn:aws:iam::698382851171:role/GitHubTFRole"
+        ROLE_ARN="arn:aws:iam::698382851171:role/GitHubActionRole"
         CREDENTIALS=$(aws sts assume-role --role-arn $ROLE_ARN --role-session-name GitHubActions)
         echo "AWS_ACCESS_KEY_ID=$(echo $CREDENTIALS | jq -r '.Credentials.AccessKeyId')" >> $GITHUB_ENV
         echo "AWS_SECRET_ACCESS_KEY=$(echo $CREDENTIALS | jq -r '.Credentials.SecretAccessKey')" >> $GITHUB_ENV
