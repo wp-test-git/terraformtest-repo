@@ -25,7 +25,7 @@ jobs:
       id: assume-role
       run: |
         ROLE_ARN="arn:aws:iam::698382851171:role/GitHubActionRole"
-        aws-region: us-east-1
+        AWS_REGION: us-east-1
 
     - name: Terraform Init
       run: terraform init
